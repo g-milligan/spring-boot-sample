@@ -67,3 +67,5 @@ note, `server.error.whitelabel.enabled` doesn't seem to be needed; the custom co
 [Sample --> application.properties](https://github.com/g-milligan/spring-boot-sample/blob/customerrorcontroller/src/main/resources/application.properties)
 
 [Sample --> CustomErrorController.java](https://github.com/g-milligan/spring-boot-sample/blob/customerrorcontroller/src/main/java/com/example/javaproject/CustomErrorController.java)
+
+In the sample code above, `@RequestMapping("${server.error.path}")` receives the value from `application.properties` property `server.error.path`. 
