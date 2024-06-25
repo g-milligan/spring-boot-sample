@@ -12,6 +12,12 @@ There are different ways to handle 404 error pages in Spring Boot, documented be
 
 ## 404.html
 
+Pros:
+- Fastest / simplest way to handle errors
+
+Cons:
+- Does not provide dynamic handling (eg: logging)
+
 Spring boot will automatically pick up .html error pages if they are named correctly and put into the correct folder. 
 
 For example:
@@ -30,6 +36,13 @@ main
 
 ## @ControllerAdvice
 
+Pros:
+- Catch all errors globally
+- Can handle errors dynamically (eg: logging)
+
+Cons:
+- More than one different controller may be desired to handle errors
+
 You can create a controller with the @ControllerAdvice annotation, to handle errors globally. 
 
 All you have to do is create the controller .java file (sample code below).
@@ -38,3 +51,19 @@ Note: This @ControllerAdvice controller will override the HTML templates like th
 
 [Sample code](https://github.com/g-milligan/spring-boot-sample/blob/controlleradvice/src/main/java/com/example/javaproject/ControllerAdviceExceptionHandler.java)
 
+## Custom Error Controller (implements ErrorController)
+
+You can set up a custom error controller to handle different errors.
+
+Define the error path in `application.properties`:
+
+``` shell
+# server.error.whitelabel.enabled=false
+server.error.path=/error-test
+```
+
+note, `server.error.whitelabel.enabled` doesn't seem to be needed; the custom controller will overwrite the default whitelabel. 
+
+[Sample --> application.properties](https://github.com/g-milligan/spring-boot-sample/blob/customerrorcontroller/src/main/resources/application.properties)
+
+[Sample --> CustomErrorController.java](https://github.com/g-milligan/spring-boot-sample/blob/customerrorcontroller/src/main/java/com/example/javaproject/CustomErrorController.java)
