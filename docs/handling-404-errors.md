@@ -26,4 +26,4 @@ main
 ---------|---404.html
 ```
 
-[Sample code](#)
+[Sample code](https://github.com/g-milligan/spring-boot-sample/blob/404htmlpage/src/main/resources/public/error/404.html)
