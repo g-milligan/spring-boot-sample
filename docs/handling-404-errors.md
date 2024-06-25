@@ -27,3 +27,14 @@ main
 ```
 
 [Sample code](https://github.com/g-milligan/spring-boot-sample/blob/404htmlpage/src/main/resources/public/error/404.html)
+
+## @ControllerAdvice
+
+You can create a controller with the @ControllerAdvice annotation, to handle errors globally. 
+
+All you have to do is create the controller .java file (sample code below).
+
+Note: This @ControllerAdvice controller will override the HTML templates like the 404.html template. 
+
+[Sample code](https://github.com/g-milligan/spring-boot-sample/blob/controlleradvice/src/main/java/com/example/javaproject/ControllerAdviceExceptionHandler.java)
+
